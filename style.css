@@ -84,7 +84,7 @@ h1 {
 
 #search-button:hover {
     background-color: #21a1f1; /* Darker blue on hover */
-    transform: translateY(-2px); /* Slight lift effect */
+    transform: translateY(1px); /* Slight lift effect */
     box-shadow: 0 5px 15px rgba(33, 161, 241, 0.3);
 }
 
@@ -127,32 +127,24 @@ h1 {
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
     border: 3px solid transparent; /* Placeholder for dynamic border */
     transition: all 0.3s ease;
+    /* Use a CSS variable for the progress, defaulting to 0% */
+    background: conic-gradient(var(--color, #4a505f) 0% var(--progress-degree, 0%), #4a505f 0% 100%);
 }
 
-/* Dynamic styling for the progress parts (adjust these in JS later or use a library) */
-/* For demonstration, I'm setting a static 'progress' here.
-   In a real app, you'd calculate the percentage and apply
-   `conic-gradient` dynamically via JavaScript. */
-
-/* Easy Progress */
+/* Set the color variable for each progress type */
 .easy-progress {
-    /* Example: 50% progress */
-    background: conic-gradient(#4CAF50 0% 11.62%, #4a505f 11.62% 100%); /* Green for Easy (103/886 ~ 11.62%) */
-    border-color: #4CAF50;
+    --color: #4CAF50;
+    border-color: var(--color);
 }
 
-/* Medium Progress */
 .medium-progress {
-    /* Example: 30% progress */
-    background: conic-gradient(#FFC107 0% 5.25%, #4a505f 5.25% 100%); /* Amber for Medium (98/1884 ~ 5.25%) */
-    border-color: #FFC107;
+    --color: #FFC107;
+    border-color: var(--color);
 }
 
-/* Hard Progress */
 .hard-progress {
-    /* Example: 10% progress */
-    background: conic-gradient(#F44336 0% 0.46%, #4a505f 0.46% 100%); /* Red for Hard (4/855 ~ 0.46%) */
-    border-color: #F44336;
+    --color: #F44336;
+    border-color: var(--color);
 }
 
 
